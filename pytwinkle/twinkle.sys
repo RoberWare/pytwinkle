@@ -1,0 +1,72 @@
+# AUDIO
+dev_ringtone=alsa:default
+dev_speaker=alsa:default
+dev_mic=alsa:default
+validate_audio_dev=yes
+alsa_play_period_size=128
+alsa_capture_period_size=32
+oss_fragment_size=128
+
+# LOG
+log_max_size=5
+log_show_sip=yes
+log_show_stun=yes
+log_show_memory=yes
+log_show_debug=no
+
+# GUI
+gui_use_systray=yes
+gui_hide_on_close=yes
+gui_auto_show_incoming=no
+gui_auto_show_timeout=10
+gui_browser_cmd=
+gui_show_call_osd=yes
+
+# Address book
+ab_show_sip_only=no
+ab_lookup_name=yes
+ab_override_display=yes
+ab_lookup_photo=yes
+
+# Call history
+ch_max_size=50
+
+# Services
+call_waiting=yes
+hangup_both_3way=yes
+
+# Startup
+start_user_profile=roberlama2
+start_hidden=no
+
+# Network
+sip_port=5060
+rtp_port=8000
+sip_max_udp_size=65535
+sip_max_tcp_size=1000000
+
+# Ring tones
+play_ringtone=yes
+ringtone_file=
+play_ringback=yes
+ringback_file=
+
+# MIME settings
+mime_shared_database=/usr/share/mime/globs
+
+# Persistent user interface state
+last_used_profile=roberlama2
+redial_url=
+redial_display=
+redial_subject=
+redial_profile=
+redial_hide_user=no
+show_display=yes
+show_buddy_list=yes
+warn_hide_user=yes
+
+# UI session settings
+ui_session_id=
+ui_session_main_geometry=0,0,0,0
+ui_session_main_hidden=no
+ui_session_main_state=0
