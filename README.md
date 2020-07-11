@@ -33,6 +33,7 @@ def callback(event, *args):
         uri, expires = args
         print("registratiom succeeded, uri: %s, expires in %s seconds"%(uri, expires))
         # The module keeps the session, you havent to register
+        mTP.message("name@domain", "hello")
         mTP.call("name@domain")
 
     if event=="new_msg":
