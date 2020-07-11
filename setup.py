@@ -22,7 +22,7 @@ s = setup(
     'Programming Language :: Python :: 3.6',
     ],
     name='pytwinkle',
-    version='0.1',
+    version='0.1.1',
     description='Twinkle sip client, ported to a python module.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -32,5 +32,12 @@ s = setup(
     author_email='roberlama@gmail.com',
     url='https://github.com/RoberWare/pytwinkle',
     packages=find_packages(),
-    entry_points={}
+    include_package_data=True,
+    # relative to the vfclust directory
+    #package_data={
+    #    'pytwinkle':
+    #         ['twinkle.sys',
+    #          'user.cfg'
+    #    ]},
+    #entry_points={}
 )

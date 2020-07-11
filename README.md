@@ -34,7 +34,7 @@ def callback(event, *args):
         uri, expires = args
         print("registratiom succeeded, uri: %s, expires in %s seconds"%(uri, expires))
         # The module keeps the session, you havent to register
-        mTP.message("name@domain", "hello")
+        mTP.message("name@domain", "Hello")
         mTP.call("name@domain")
 
     if event=="new_msg":
@@ -58,6 +58,7 @@ def callback(event, *args):
         print("call ended, line: %s"%(line))
   
 mTP = Twinkle(callback)  
+mTP.set_account("name","domain","password")
 mTP.run()
 ```
 
