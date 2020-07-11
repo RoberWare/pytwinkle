@@ -21,6 +21,7 @@ Twinkle sip client, ported to a python module.
 
 #### Instalation
 ```Shell
+sudo apt-get install twinkle
 sudo pip3 install pytwinkle
 ```
 
