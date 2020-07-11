@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+pytwinkle/__init__.py
+pytwinkle/twinkle.sys
+pytwinkle/user.cfg
+pytwinkle.egg-info/PKG-INFO
+pytwinkle.egg-info/SOURCES.txt
+pytwinkle.egg-info/dependency_links.txt
+pytwinkle.egg-info/top_level.txt

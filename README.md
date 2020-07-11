@@ -62,6 +62,31 @@ mTP.set_account("name","domain","password")
 mTP.run()
 ```
 
+ - Callbacks
+| *Event*                  |  *Description*               | *Returns *                             |
+|--------------------------|------------------------------|----------------------------------------|
+| "registration_succeeded" | When the registration suceed | Line number and seconds to expire (*)  |
+| "new_msg"                | New message receives         | msg={'from':uri, 'to':uri 'msg':msg}   |
+| "incoming_call"          | Incoming call                | call={'from':uri, 'to':uri}            |
+| "cancelled_call"         | Cancelled call               | Line number                            |
+| "answered_call"          | Answered call                | call={'msg':msg, 'code':num, 'to':uri} |
+| "ended_call"             | Ended call                   | Line number                            |
+
+(*) doesnt matter the seconds to expire, the program keep the session active
+
+ - Functions
+  - call		Call someone
+  - answer		Answer an incoming call
+  - answerbye	Answer an incoming call or end a call
+  - reject		Reject an incoming call
+  - bye		    End a call
+  - hold		Put a call on-hold
+  - retrieve	Retrieve a held call
+  - redial		Repeat last call
+  - register	Register your phone at a registrar
+  - deregister	De-register your phone at a registrar
+  - message		Send an instant message
+
  - Not supported at the moment
    - redirect	Redirect an incoming call
    - transfer	Transfer a standing call
@@ -75,6 +100,7 @@ mTP.run()
    - auto_answer	Auto answer
    - user		Show users / set active user
    - presence	Publish your presence state
+   - quit		Quit
 
 
 #### Dependencies
