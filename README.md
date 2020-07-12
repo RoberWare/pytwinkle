@@ -76,17 +76,17 @@ mTP.run()
 (*) doesnt matter the seconds to expire, the program keep the session active
 
  - Functions
-  - call		Call someone
-  - answer		Answer an incoming call
-  - answerbye	Answer an incoming call or end a call
-  - reject		Reject an incoming call
-  - bye		    End a call
-  - hold		Put a call on-hold
-  - retrieve	Retrieve a held call
-  - redial		Repeat last call
-  - register	Register your phone at a registrar
-  - deregister	De-register your phone at a registrar
-  - message		Send an instant message
+   - call		Call someone
+   - answer		Answer an incoming call
+   - answerbye	Answer an incoming call or end a call
+   - reject		Reject an incoming call
+   - bye		    End a call
+   - hold		Put a call on-hold
+   - retrieve	Retrieve a held call
+   - redial		Repeat last call
+   - register	Register your phone at a registrar
+   - deregister	De-register your phone at a registrar
+   - message		Send an instant message
 
  - Not supported at the moment
    - redirect	Redirect an incoming call
