@@ -63,6 +63,7 @@ mTP.run()
 ```
 
  - Callbacks
+ 
 | *Event*                  |  *Description*               | *Returns *                             |
 |--------------------------|------------------------------|----------------------------------------|
 | "registration_succeeded" | When the registration suceed | Line number and seconds to expire (*)  |
