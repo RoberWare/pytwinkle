@@ -123,7 +123,8 @@ class Twinkle():
                 time.sleep(1)
                 if not (seconds.value>0):
                     self.twinkle_process.stdin.write(str.encode("register\n"))
-                    self.twinkle_process.stdin.flush()                  
+                    self.twinkle_process.stdin.flush()
+
     def check_msg(self,line):
         is_msg=False
         #print(self.n_line-self.state['line'])
@@ -222,6 +223,22 @@ class Twinkle():
             is_reg = True
             if self.callback: self.callback("ended_call",m.group(1))
         return is_reg
+
+    def check_failed_call(self, line):
+        is_reg = False
+        m = re.search(r'Line (.*): call failed.', line)
+        if m:
+            is_reg = True
+            if self.callback: self.callback("failed_call",m.group(1))
+        return is_reg
+
+    def check_dtmf_received(self, line):
+        is_reg = False
+        m = re.search(r'Line (.*): DTMF detected: (.*)', line)
+        if m:
+            is_reg = True
+            if self.callback: self.callback("dtmf_received",m.group(1),m.group(2))
+        return is_reg
             
     def process(self):
         b_length = self.counter-self.n_line
@@ -241,6 +258,10 @@ class Twinkle():
             elif self.check_answered_call(line):
                 pass
             elif self.check_ended_call(line):
+                pass
+            elif self.check_failed_call(line):
+                pass
+            elif self.check_dtmf_received(line):
                 pass
             self.n_line+=1
 

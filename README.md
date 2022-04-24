@@ -11,13 +11,13 @@ Twinkle sip client, ported to a python module.
 
 #### Tested environments
 
-|                         |                                         |
-|-------------------------|-----------------------------------------|
-| **Hardware**            | Rpi zero W                              | 
-| **Operating systems**   | Linux                                   |
-| **Python versions**     | Python 3.x                              |
-| **Distros**             | Raspbian 10                             |
-| **Languages**           | English                                 |
+|                         |                        |
+|-------------------------|------------------------|
+| **Hardware**            | Rpi zero W & Rp3 mob B | 
+| **Operating systems**   | Linux                  |
+| **Python versions**     | Python 3.x             |
+| **Distros**             | Raspbian 10 & 11       |
+| **Languages**           | English                |
 
 #### Instalation
 ```Shell
@@ -49,6 +49,15 @@ def callback(event, *args):
         line=args[0]
         print("call cancelled, line: %s"%(line))
         
+    if event=="failed_call":
+        line=args[0]
+        print("failed_call, line: %s"%(line))
+        
+    if event=="dtmf_received":
+        line=args[0]
+        key=args[0]
+        print("dtmf_received, line: %s, key: %s"%(key))
+        
     if event=="answered_call":
         call=args[0]
         print("answered: %s"%(str(call)))
@@ -64,7 +73,7 @@ mTP.run()
 
  - Callbacks
  
-| *Event*                  |  *Description*               | *Returns *                             |
+| *Event*                  | *Description*                | *Returns *                             |
 |--------------------------|------------------------------|----------------------------------------|
 | "registration_succeeded" | When the registration suceed | Line number and seconds to expire (*)  |
 | "new_msg"                | New message receives         | msg={'from':uri, 'to':uri 'msg':msg}   |
@@ -72,6 +81,8 @@ mTP.run()
 | "cancelled_call"         | Cancelled call               | Line number                            |
 | "answered_call"          | Answered call                | call={'msg':msg, 'code':num, 'to':uri} |
 | "ended_call"             | Ended call                   | Line number                            |
+| "failed_call"            | Failed call                  | Line number                            |
+| "dtmf_received"          | DMTF reveived                | Line number and Key number             |
 
 (*) doesnt matter the seconds to expire, the program keep the session active
 

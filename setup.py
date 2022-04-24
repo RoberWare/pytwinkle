@@ -22,7 +22,7 @@ s = setup(
     'Programming Language :: Python :: 3.6',
     ],
     name='pytwinkle',
-    version='0.1.3',
+    version='0.1.4',
     description='Twinkle sip client, ported to a python module.',
     long_description=long_description,
     long_description_content_type='text/markdown',
