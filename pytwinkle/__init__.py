@@ -13,7 +13,7 @@ def parse_line(input):
     return key, value
 
 class Twinkle():
-    def __init__(self, callback):
+    def __init__(self, callback, profile=None):
         cmd="twinkle -c"
         self.twinkle_process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, 
                                                                  stderr=subprocess.STDOUT,
