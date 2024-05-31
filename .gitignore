@@ -1,1 +1,4 @@
 secrets.py
+__pycache__
+pytwinkle/__pycache__/
+pytwinkle/tests/__pycache__/

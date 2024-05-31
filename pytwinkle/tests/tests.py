@@ -1,5 +1,10 @@
-from ..pytwinkle import Twinkle
-from ..secrets import NAME, DOMAIN, PASSWORD
+import os, sys
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+print(sys.path)
+
+from pytwinkle import Twinkle
+import secrets
 
 def callback(event, *args):
     if event=="registration_succeeded":
@@ -39,5 +44,5 @@ def callback(event, *args):
         print("call ended, line: %s"%(line))
   
 mTP = Twinkle(callback)  
-mTP.set_account(NAME, DOMAIN, PASSWORD)
+mTP.set_account(secrets.NAME, secrets.DOMAIN, secrets.PASSWORD)
 mTP.run()
